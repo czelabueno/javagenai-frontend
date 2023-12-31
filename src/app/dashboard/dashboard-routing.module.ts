@@ -10,9 +10,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      // { path: 'devices', loadChildren: './areas/devices/devices.module#DevicesModule' }
       {
-        path: 'devices', loadChildren : './areas/devices/devices.module#DevicesModule'
+        path: 'langchain4j', loadChildren : './areas/langchain4j/langchain4j.module#Langchain4jModule'
       }
     ]
   }

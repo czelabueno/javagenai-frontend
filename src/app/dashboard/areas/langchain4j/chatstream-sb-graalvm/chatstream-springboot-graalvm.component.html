@@ -1,0 +1,26 @@
+<!-- src/app/chat/chat.component.html -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<h1 class="text-center">Chatstream: Server Sent Events </h1>
+<h2 class="text-center">Springboot 🍃 + Langchain4j 🐦 + OpenAI 🤖 + GraalVM JDK 21 🚀</h2>
+
+<div><h5 class="text-lg-center text-center"><a href="javascript:void(0);" (click)="getBuildType()">{{ nativeImage }} </a></h5></div>
+<div class="container mt-3">
+  <div *ngFor="let chatBox of messages" class="chat-box">
+    <i [ngClass]="getIconClass(chatBox.userName)">&nbsp;</i>
+    <span class="message user-name">{{ chatBox.userName }}:&nbsp;</span>
+    <span class="message">{{ chatBox.text }}&nbsp;</span>
+  </div>
+  <div class="input-group mt-3">
+    <textarea class="form-control" [(ngModel)]="newMessage" placeholder="Type your message..."></textarea>
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+

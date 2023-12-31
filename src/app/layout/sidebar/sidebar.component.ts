@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
   conversion: any;
   costPerConversion: any;
 
-  @Input() sidebarVisible = true;
+  @Input() sidebarVisible = false;
   @Input() navTab = 'menu';
   @Input() currentActiveMenu;
   @Input() currentActiveSubMenu;

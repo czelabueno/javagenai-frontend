@@ -3,11 +3,11 @@
 <div id="left-sidebar" class="sidebar" *ngIf="sidebarVisible" style="overflow-y:scroll;">
     <div class="sidebar-scroll">
         <div class="user-account">
-            <img src="assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
+            <img src="assets/images/speaker-cz.png" class="rounded-circle user-photo" alt="User Profile Picture">
             <div class="dropdown" ngbDropdown>
                 <span>Welcome,</span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name" ngbDropdownToggle><strong>
-                    SynderFiltration</strong></a>
+                    Carlos Zela</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
                     <li><a [routerLink]="['/admin/pages/page-profile2']"><i class="icon-user"></i>My Profile</a></li>
                     <li><a [routerLink]="['/admin/app/app-inbox']"><i class="icon-envelope-open"></i>Messages</a></li>
@@ -17,25 +17,10 @@
                 </ul>
             </div>
             <hr>
-            <span>Stats for the last days</span>
-            <ul class="row list-unstyled">
-                <li class="col-4">
-                    <small style="font-size:66%;">Cost</small>
-                    <h6 style="font-size:12px;">${{cost}}</h6>
-                </li>
-                <li class="col-4">
-                    <small style="font-size:66%;">Conversions</small>
-                    <h6 style="font-size:12px;">{{conversion}}</h6>
-                </li>
-                <li class="col-4">
-                    <small style="font-size:66%;">Cost/Conversion</small>
-                    <h6 style="font-size:12px;">${{costPerConversion}}</h6>
-                </li>
-            </ul>
         </div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'menu'}" (click)="changeNavTab('menu')">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'menu'}" (click)="changeNavTab('menu')">Java Frameworks</a></li>
             <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'setting'}" (click)="changeNavTab('setting')"><i
                         class="icon-settings"></i></a></li>
             <li class="nav-item"><a class="nav-link" [ngClass]="{'active':navTab == 'question'}" (click)="changeNavTab('question')"><i
@@ -48,21 +33,27 @@
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
-                            <a [routerLink]="['/dashboard']"><i class="icon-home"></i>
-                                <span>Dashboard</span></a>
-                        </li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            <a [routerLink]="['/admin/keywords/keyword-list']"><i class="fa fa-language"></i> <span>Keywords</span></a>
+                            <a [routerLink]="['/dashboard']"><i class="icon-globe"></i>
+                                <span>Spring AI</span></a>
+                            <ul *ngIf="currentActiveMenu == 'dashboard'">
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">ChatStream: SpringAI + OpenAI</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">Embedding: SpringAI + Azure OpenAI</a></li>
+                            </ul>
                         </li>
                         <li [ngClass]="{'active':currentActiveMenu == 'file-manager'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('file-manager')"><i class="icon-folder"></i>
-                                <span>Reports</span></a>
+                            <a class="has-arrow" (click)="activeInactiveMenu('file-manager')"><i class="icon-social-twitter"></i>
+                                <span>LangChain4j</span></a>
                             <ul *ngIf="currentActiveMenu == 'file-manager'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-documents']">Performance Reports</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">Activity</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/langchain4j/chatstream-sb-graalvm']">ChatStream: LangChain4J + Open AI + Springboot + GraalVM</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">Embedding: LangChain4J + Open AI + OpenAI + Micronaut</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">Chat: LangChain4J + Open AI + Springboot + GraalVM</a></li>
                                 <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-images']">Images</a></li> -->
                             </ul>
                         </li>
+                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a [routerLink]="['/admin/keywords/keyword-list']"><i class="icon-chemistry"></i> <span>Semantic Kernel</span></a>
+                        </li>
+                        <!--
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             <a [routerLink]="['/devices/device-listing']"><i class="icon-globe"></i> <span>Devices</span></a>
                         </li>
@@ -102,7 +93,7 @@
                                         [routerLink]="['/admin/widgets/widgets-ecommerce']">eCommerce</a></li>
                             </ul>
                         </li>
-
+                        -->
                         <!-- <li [ngClass]="{'active':currentActiveMenu == 'authentication'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('authentication')"><i class="icon-lock"></i>
                                 <span>Authentication</span></a>
@@ -170,6 +161,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/charts/chart-echarts']">E-Charts</a></li>
                             </ul>
                         </li> -->
+                        <!--
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'app'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('app')"><i class="icon-grid"></i> <span>Household Income</span></a>
                             <ul *ngIf="currentActiveMenu == 'app'">
@@ -179,7 +171,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/app/app-contact-grid']">Contact
                                         Card <span class="badge badge-warning float-right">New</span></a></li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </nav>
             </div>

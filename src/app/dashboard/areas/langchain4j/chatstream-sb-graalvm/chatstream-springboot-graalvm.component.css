@@ -1,0 +1,29 @@
+.chat-box {
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow-y: auto;  /* Enable vertical scrolling if messages exceed container height */
+  max-height: 300px; /* Limit the height of the chat box, adjust as needed */
+}
+
+.message {
+  margin-bottom: 5px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+/* Add appropriate styling for the bot and human icons */
+.bot-icon::before {
+  content: '\f0c0'; /* Font Awesome robot icon */
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+.human-icon::before {
+  content: '\f007'; /* Font Awesome user icon */
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}

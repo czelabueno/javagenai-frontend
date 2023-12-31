@@ -11,8 +11,8 @@ import { ThemeService } from '../services/theme.service';
 export class HeaderComponent implements OnInit {
   // Properties
 
-  @Input() showNotifMenu = false;
-  @Input() showToggleMenu = false;
+  @Input() showNotifMenu = true;
+  @Input() showToggleMenu = true;
   @Output() toggleSettingDropMenuEvent = new EventEmitter();
   @Output() toggleNotificationDropMenuEvent = new EventEmitter();
 
